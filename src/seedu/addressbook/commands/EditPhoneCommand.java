@@ -19,15 +19,18 @@ public class EditPhoneCommand extends Command {
 
     public static final String MESSAGE_EDIT_PHONE_SUCCESS = "Edited Person: %1$s";
 
+    private String phoneNumberToChange = "";
 
-    public EditPhoneCommand(int targetVisibleIndex) {
-        
+    public EditPhoneCommand(int targetVisibleIndex, String phoneNumberToChange) {
         super(targetVisibleIndex);
+        this.phoneNumberToChange = phoneNumberToChange;
+        //System.out.println("phone number to change: " + this.phoneNumberToChange);
     }
 
 
     @Override
     public CommandResult execute() {
+        System.out.println("executing...");
         try {
             final ReadOnlyPerson target = getTargetPerson();
             //addressBook.removePerson(target);

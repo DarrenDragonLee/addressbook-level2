@@ -15,6 +15,7 @@ import seedu.addressbook.commands.AddCommand;
 import seedu.addressbook.commands.ClearCommand;
 import seedu.addressbook.commands.Command;
 import seedu.addressbook.commands.DeleteCommand;
+import seedu.addressbook.commands.EditPhoneCommand;
 import seedu.addressbook.commands.ExitCommand;
 import seedu.addressbook.commands.FindCommand;
 import seedu.addressbook.commands.HelpCommand;
@@ -79,6 +80,9 @@ public class Parser {
         case DeleteCommand.COMMAND_WORD:
             return prepareDelete(arguments);
 
+        case EditPhoneCommand.COMMAND_WORD:
+            return prepareEditPhone(arguments);
+            
         case ClearCommand.COMMAND_WORD:
             return new ClearCommand();
 
@@ -174,6 +178,42 @@ public class Parser {
         }
     }
 
+    /**
+     * Parses arguments in the context of the edit person phone number command.
+     *
+     * @param args full command args string
+     * @return the prepared command
+     */
+    private Command prepareEditPhone(String args) {
+        args = args.trim();
+        //System.out.println("The argument is: " + args);
+        String[] splitUserArgs = args.split("\\s+");
+
+        //System.out.println("check 1");
+        // check if there are the correct number of arguments in the entered command
+        if (splitUserArgs.length != 2) {
+            System.out.println(splitUserArgs.length);
+            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditPhoneCommand.MESSAGE_USAGE));
+        }
+
+        //System.out.println("check 2");
+        // checks if the phone number entered is valid
+        final String phoneNumberToChange = splitUserArgs[1].trim();
+        if (!phoneNumberToChange.matches("[0-9]+")) {
+            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditPhoneCommand.MESSAGE_USAGE));
+        }
+
+        //System.out.println("check 3");
+        try {
+            final int targetIndex = parseArgsAsDisplayedIndex(splitUserArgs[0]);
+            return new EditPhoneCommand(targetIndex, phoneNumberToChange);
+        } catch (ParseException pe) {
+            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditPhoneCommand.MESSAGE_USAGE));
+        } catch (NumberFormatException nfe) {
+            return new IncorrectCommand(MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+        }
+    }
+    
     /**
      * Parses arguments in the context of the view command.
      *
