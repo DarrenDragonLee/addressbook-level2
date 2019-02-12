@@ -192,7 +192,7 @@ public class Parser {
         //System.out.println("check 1");
         // check if there are the correct number of arguments in the entered command
         if (splitUserArgs.length != 2) {
-            System.out.println(splitUserArgs.length);
+            //System.out.println(splitUserArgs.length);
             return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditPhoneCommand.MESSAGE_USAGE));
         }
 

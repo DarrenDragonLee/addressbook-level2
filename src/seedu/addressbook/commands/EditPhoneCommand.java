@@ -30,7 +30,7 @@ public class EditPhoneCommand extends Command {
 
     @Override
     public CommandResult execute() {
-        System.out.println("executing...");
+        //System.out.println("executing...");
         try {
             final ReadOnlyPerson target = getTargetPerson();
             addressBook.editPhone(target, this.phoneNumberToChange);

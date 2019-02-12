@@ -233,6 +233,57 @@
 || 
 || 2 persons listed!
 || ===================================================
+|| Enter command: || [Command entered:  editphone]
+|| Invalid command format! 
+|| editphone: Edits the phone number of the person identified by the index number used in the last person listing.
+|| Parameters: INDEX NEW_PHONE_NUMBER
+|| Example: editphone 1 91230123
+|| ===================================================
+|| Enter command: || [Command entered:  editphone should be only one number]
+|| Invalid command format! 
+|| editphone: Edits the phone number of the person identified by the index number used in the last person listing.
+|| Parameters: INDEX NEW_PHONE_NUMBER
+|| Example: editphone 1 91230123
+|| ===================================================
+|| Enter command: || [Command entered:  editphone -1 91230123]
+|| The person index provided is invalid
+|| ===================================================
+|| Enter command: || [Command entered:  editphone 0 91230123]
+|| The person index provided is invalid
+|| ===================================================
+|| Enter command: || [Command entered:  editphone 3 91230123]
+|| The person index provided is invalid
+|| ===================================================
+|| Enter command: || [Command entered:  find Dickson]
+|| 	1. Charlie Dickson Email: charlie.d@nus.edu.sg Address: 333, gamma street Tags: [school][friends]
+|| 	2. Dickson Ee Phone: 444444 Address: 444, delta street Tags: [friends]
+|| 
+|| 2 persons listed!
+|| ===================================================
+|| Enter command: || [Command entered:  editphone 2 555555]
+|| Edited Person: Dickson Ee Phone: 555555 Email: (private) dickson@nus.edu.sg Address: 444, delta street Tags: [friends]
+|| ===================================================
+|| Enter command: || [Command entered:  find Dickson]
+|| 	1. Charlie Dickson Email: charlie.d@nus.edu.sg Address: 333, gamma street Tags: [school][friends]
+|| 	2. Dickson Ee Phone: 555555 Address: 444, delta street Tags: [friends]
+|| 
+|| 2 persons listed!
+|| ===================================================
+|| Enter command: || [Command entered:  editphone 2 444444]
+|| Edited Person: Dickson Ee Phone: 444444 Email: (private) dickson@nus.edu.sg Address: 444, delta street Tags: [friends]
+|| ===================================================
+|| Enter command: || [Command entered:  find Dickson]
+|| 	1. Charlie Dickson Email: charlie.d@nus.edu.sg Address: 333, gamma street Tags: [school][friends]
+|| 	2. Dickson Ee Phone: 444444 Address: 444, delta street Tags: [friends]
+|| 
+|| 2 persons listed!
+|| ===================================================
+|| Enter command: || [Command entered:  find Charlie Betsy]
+|| 	1. Betsy Choo Tags: [secretive]
+|| 	2. Charlie Dickson Email: charlie.d@nus.edu.sg Address: 333, gamma street Tags: [school][friends]
+|| 
+|| 2 persons listed!
+|| ===================================================
 || Enter command: || [Command entered:  delete]
 || Invalid command format! 
 || delete: Deletes the person identified by the index number used in the last person listing.

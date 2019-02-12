@@ -107,6 +107,33 @@
   find Charlie Betsy
 
 ##########################################################
+# test edit phone number command
+##########################################################
+
+# last active view: [1] betsy [2] charlie
+
+# should catch invalid args format
+  editphone
+  editphone should be only one number
+
+# should catch invalid index
+  editphone -1 91230123
+  editphone 0 91230123
+  editphone 3 91230123
+
+# find person with phone number
+  find Dickson
+  editphone 2 555555
+  find Dickson
+  
+# revert to original 
+  editphone 2 444444
+  find Dickson
+
+# reset view to original
+  find Charlie Betsy
+
+##########################################################
 # test delete person command
 ##########################################################
 
