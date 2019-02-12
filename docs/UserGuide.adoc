@@ -111,6 +111,27 @@ Deletes the 2nd person in the address book.
 `delete 1` +
 Deletes the 1st person in the results of the `find` command.
 
+== Editing a person's phone number : `editphone`
+
+Edits the phone number of a specified person from the address book. Irreversible. +
+Format: `editphone INDEX NUMBER_TO_CHANGE`
+
+****
+Edits the phone number of the person at the specified `INDEX`.
+The index refers to the index number shown in the most recent listing.
+Changes that person's phone number to the one specified in the arguments.  
+****
+
+Examples:
+
+* `list` +
+`editphone 2 91230123` +
+Edits the phone number of the 2nd person in the address book to 91230123.
+
+* `find Betsy` +
+`editphone 1 91230123` +
+Edits the phone number of the 1st person in the results of the `find` command to 91230123.
+
 == View non-private details of a person : `view`
 
 Displays the non-private details of the specified person. +
