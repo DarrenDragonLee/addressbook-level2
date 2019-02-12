@@ -55,6 +55,15 @@ public class AddressBook {
     }
 
     /**
+     * Removes the equivalent person from the address book.
+     *
+     * @throws PersonNotFoundException if no such Person could be found.
+     */
+    public void editPhone(ReadOnlyPerson toEdit, String numberToChange) throws PersonNotFoundException {
+        allPersons.editPhone(toEdit, numberToChange);
+    }
+
+    /**
      * Clears all persons and tags from the address book.
      */
     public void clear() {

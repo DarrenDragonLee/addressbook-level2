@@ -33,13 +33,13 @@ public class EditPhoneCommand extends Command {
         System.out.println("executing...");
         try {
             final ReadOnlyPerson target = getTargetPerson();
-            //addressBook.removePerson(target);
+            addressBook.editPhone(target, this.phoneNumberToChange);
             return new CommandResult(String.format(MESSAGE_EDIT_PHONE_SUCCESS, target));
 
         } catch (IndexOutOfBoundsException ie) {
             return new CommandResult(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
-        //} catch (PersonNotFoundException pnfe) {
-            //return new CommandResult(Messages.MESSAGE_PERSON_NOT_IN_ADDRESSBOOK);
+        } catch (PersonNotFoundException pnfe) {
+            return new CommandResult(Messages.MESSAGE_PERSON_NOT_IN_ADDRESSBOOK);
         }
     }
 

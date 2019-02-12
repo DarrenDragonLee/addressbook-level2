@@ -62,6 +62,10 @@ public class Person implements ReadOnlyPerson {
         return new HashSet<>(tags);
     }
 
+    public void setPhone(String phoneToChange) {
+        this.phone.value = phoneToChange;
+    }
+    
     /**
      * Replaces this person's tags with the tags in the argument tag set.
      */
